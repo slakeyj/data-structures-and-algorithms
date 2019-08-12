@@ -1,21 +1,25 @@
 {
+  "globals": {
+    "Handlebars": true,
+    "$": true
+  },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "ecmaVersion": 6,
-    "ecmaFeatures": {
-      "impliedStrict": true
-    }
+    "ecmaVersion": 6
   },
   "env": {
     "browser": true,
+    "jquery": true,
+    "node": true,
     "es6": true,
-    "jquery": true
+    "jest": true
   },
   "rules": {
     "eqeqeq": [
       "error",
       "always"
     ],
+    "no-template-curly-in-string": "error",
     "no-console": "off",
     "no-undefined": "off",
     "indent": [
@@ -24,7 +28,10 @@
     ],
     "quotes": [
       "warn",
-      "single"
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
     ],
     "no-multi-spaces": [
       "warn",
@@ -41,10 +48,6 @@
       {
         "builtinGlobals": true
       }
-    ],
-    "semi": [
-      2,
-      "always"
     ],
     "eol-last": "error"
   }
