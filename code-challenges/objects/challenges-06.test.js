@@ -89,7 +89,6 @@ hasChildrenValues(characters, 'Sansa') will return false
 const hasChildrenValues = (arr, character) => {
   let answer = false;
   arr.forEach(profile => {
-    console.log(profile.name);
     if (profile.name === character) {
       answer = profile.children.length > 0;
     }
@@ -107,7 +106,6 @@ The input and output of this function are the same as the input and output from 
 const hasChildrenEntries = (arr, character) => {
   let answer = false;
   arr.forEach(profile => {
-    console.log(profile.name);
     if (profile.name === character) {
       answer = profile.children.length > 0;
     }
@@ -122,8 +120,21 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-};
+  const names = []
+  arr.forEach(person => {
+
+    names.push(person.name);
+    if (person.spouse !== null) {
+      names.push(person.spouse);
+    }
+    person.children.forEach(child => {
+      names.push(child)
+    })
+
+  })
+  console.log(names);
+  return names.length;
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -209,7 +220,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the number of characters in the array', () => {
     expect(totalCharacters(characters)).toStrictEqual(27);
   });
