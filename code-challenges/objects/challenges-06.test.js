@@ -122,7 +122,6 @@ Write a function named totalCharacters that takes in an array and returns the nu
 const totalCharacters = (arr) => {
   const names = []
   arr.forEach(person => {
-
     names.push(person.name);
     if (person.spouse !== null) {
       names.push(person.spouse);
@@ -130,9 +129,7 @@ const totalCharacters = (arr) => {
     person.children.forEach(child => {
       names.push(child)
     })
-
   })
-  console.log(names);
   return names.length;
 }
 
