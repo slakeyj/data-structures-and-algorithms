@@ -85,7 +85,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
-  // Solution code here...
+  const stringSplit = str.split('');
+  let lastIndex = stringSplit.length - 1
+  let reversedString = stringSplit.reduce((accumulator) => {
+    accumulator.push(stringSplit[lastIndex]);
+    lastIndex--;
+    return accumulator;
+  }, []);
+  return reversedString.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,7 +145,13 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  // Solution code here...
+  let numberOfChildren = arr.reduce((accumulator, value) => {
+    if (value.children) {
+      accumulator += value.children.length;
+    }
+    return accumulator;
+  }, 0);
+  return numberOfChildren;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,8 +163,14 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  let counts = arr.reduce((accumulator, value) => {
+    accumulator.count++;
+    accumulator.sum += value;
+    return accumulator;
+  }, { count: 0, sum: 0 });
+  return counts.sum / counts.count;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -254,19 +273,19 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return the string with the characters in reverse order', () => {
     expect(reversedString('Code 301')).toStrictEqual('103 edoC');
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85])).toStrictEqual(64);
   });
