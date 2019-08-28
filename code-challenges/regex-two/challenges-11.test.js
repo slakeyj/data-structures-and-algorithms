@@ -58,7 +58,7 @@ Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePhoneNumber = (phoneNumber) => {
-  const regex = /^(\()?\d{3}(\)\s|\)|\-|\s)?\d{3}(\-|\s)?\d{4}$/g
+  const regex = /^(\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/gm;
   return regex.test(phoneNumber);
 };
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +155,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
