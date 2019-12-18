@@ -194,8 +194,29 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  const sorter = {
+    'Monday': 1,
+    'Tuesday': 2,
+    'Wednesday': 3,
+    'Thurdsay': 4,
+    'Friday': 5
+  }
+  
+
+    arr.sort((a, b) => {
+      // console.log('sorter a', sorter[a.dayOfWeek]);
+      if (sorter[a.dayOfWeek] < sorter[b.dayOfWeek]) {
+        return -1;
+      } else if (sorter[b.dayOfWeek] < sorter[a.dayOfWeek]) {
+        return 1;
+      } else {
+        return 0;
+      }
+    })
+    // console.log('arr is', arr);
+    return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -317,7 +338,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0, 2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
