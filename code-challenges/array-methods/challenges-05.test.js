@@ -122,7 +122,7 @@ const stepActions = (recipe) => {
   const result = [];
   const directions = recipe.steps;
   directions.forEach(step => {
-    console.log('step is', step);
+    // console.log('step is', step);
     let stepSplit = step.split(' ');
     result.push(stepSplit[0]);
   })
@@ -223,7 +223,13 @@ Similarly, extractVowels('The quick brown fox') returns ['Th qck brwn fx', 'eioo
 ------------------------------------------------------------------------------------------------ */
 
 const extractVowels = (str) => {
-  // Solution code here...
+  const regEx = /[aeiou]/g;
+  const vowelsExtracted = [];
+  vowelsExtracted.push(str.replace(regEx, ''));
+  console.log('extracted is', vowelsExtracted);
+  return vowelsExtracted;
+  //
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -320,7 +326,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the string without vowels', () => {
     expect(extractVowels('gregor')).toStrictEqual(['grgr', 'eo']);
     expect(extractVowels('gregor').length).toStrictEqual(2);
