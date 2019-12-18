@@ -9,8 +9,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
- const firstLetters = arr.map(word => word.charAt(0));
- return firstLetters;
+  const firstLetters = arr.map(word => word.charAt(0));
+  return firstLetters;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,8 +22,8 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-    const containsColon = arr.filter(word => word.includes(':)'));
-    return containsColon;
+  const containsColon = arr.filter(word => word.includes(':)'));
+  return containsColon;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-    const regEx = /([()-\s])/g;
-    return arr.map(word => word.replace(regEx, ''));
+  const regEx = /([()-\s])/g;
+  return arr.map(word => word.replace(regEx, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -48,8 +48,8 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-    const splitString = str.split('');
-    return splitString.filter((letter, index) => index % 2 === 1)
+  const splitString = str.split('');
+  return splitString.filter((letter, index) => index % 2 === 1)
     .join('');
 };
 
@@ -60,8 +60,8 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-    const hasSmile = word => word.includes(':)');
-    return arr.every(hasSmile);
+  const hasSmile = word => word.includes(':)');
+  return arr.every(hasSmile);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -98,7 +98,12 @@ For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again'
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+  const filteredBrook = [];
+  arr.filter(classroom => {
+    const allFiltered = classroom.filter(student => !(student.includes('Brook')));
+    filteredBrook.push(allFiltered);
+  })
+  return filteredBrook;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -118,14 +123,19 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
   ['Wednesday and Thursday', 'Thursday'],
   [],
   [],
-  []
+  []  
 ]
 ------------------------------------------------------------------------------------------------ */
 
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  const sortedEvents = [];
+  //filter out events that include the day of week
+  daysOfWeek.forEach(day => {
+    sortedEvents.push(arr.filter(event => event.includes(day)));
+  })
+  return sortedEvents;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -137,7 +147,7 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  return arr.map((word, index) => word.charAt(index));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -155,7 +165,7 @@ describe('Testing challenge 1', () => {
   test('It should return the first letter of each element of the array', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
-    expect(firstLetters(words)).toStrictEqual(['a','b','c']);
+    expect(firstLetters(words)).toStrictEqual(['a', 'b', 'c']);
     expect(firstLetters(['a', 'b', 'c', 'd'])).toStrictEqual(['a', 'b', 'c', 'd']);
     expect(firstLetters([])).toStrictEqual([]);
   });
@@ -237,7 +247,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort events by the day on which they happen', () => {
     const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
     const sortedEvents = sortByDay(events);
@@ -261,7 +271,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return the ith character of the ith string', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
