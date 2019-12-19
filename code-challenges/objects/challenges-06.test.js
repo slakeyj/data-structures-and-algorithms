@@ -69,9 +69,7 @@ let characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-  houses = (arr.map(people => people.house));
-  return houses;
+  return arr.map(people => people.house);
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -144,8 +142,10 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 ------------------------------------------------------------------------------------------------ */
 
 const houseSize = (arr) => {
-  const sizes = [];
-  // Solution code here...
+  const sizes = arr.map(house => ({
+    house: house.house,
+    members: house.spouse != null ? 2 + house.children.length : 1 + house.children.length
+  }))
   return sizes;
 };
 
@@ -168,8 +168,21 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
-  const survivors = [];
-  // Solution code here...
+  const survivors = arr.forEach(house => {
+    deceasedSpouses.forEach(spouse => {
+      if (spouse === house.spouse) {
+        ({
+          house: house.house,
+          members: house.spouse != null ? 1 + house.children.length : house.children.length
+        })
+      } else {
+        ({
+          house: house.house,
+          members: house.spouse != null ? 2 + house.children.length : 1 + house.children.length
+        })
+      }
+    })
+  })
   return survivors;
 };
 
@@ -223,14 +236,14 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an object for each house containing the name and size', () => {
     expect(houseSize(characters)).toStrictEqual([{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, { house: 'Lannister', members: 5 }, { house: 'Targaryen', members: 5 }, { house: 'Tyrell', members: 4 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 }]);
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should not include any deceased spouses', () => {
     expect(houseSurvivors(characters)).toStrictEqual([{ house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, { house: 'Lannister', members: 4 }, { house: 'Targaryen', members: 4 }, { house: 'Tyrell', members: 3 }, { house: 'Stark', members: 2 }, { house: 'Snow', members: 1 }]);
   });
