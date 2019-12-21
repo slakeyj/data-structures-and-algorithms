@@ -78,7 +78,6 @@ const howManyTreats = (arr) => {
   errands.forEach(storeList => {
     storeList.items.forEach(item => {
       if (item.name === 'Treats') {
-        console.log(item.quantity);
         treatsQuantity = item.quantity;
       }
     })
@@ -176,7 +175,18 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  const weeklyAverages = [];
+  weather.forEach(week => {
+    let total = 0;
+    let counter = 0;
+    week.forEach(day => {
+      total += day;
+      counter++
+
+    })
+    weeklyAverages.push(Math.round((total / counter)));
+  })
+  return Math.min(...weeklyAverages)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -192,7 +202,19 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
+  const splitNewline = str.split('\n');
+  console.log('splitstring', splitNewline)
+  const rowSplit = splitNewline.map(row => row.split(','));
+  console.log('rowsplit', rowSplit)
+  const finalTotal = rowSplit.map(row => {
+    let rowTotal = 0;
+    row.forEach(num => {
+      let parseToNum = parseInt(num);
+      rowTotal += parseToNum;
+    })
+    return rowTotal;
+  })
+  return finalTotal;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -279,14 +301,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the lowest weekly average temperature within the data set', () => {
     expect(lowestWeeklyAverage(weeklyTemperatures)).toStrictEqual(57);
     expect(lowestWeeklyAverage(lowestWeeklyTemperatureData)).toStrictEqual(46);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the total count for each row', () => {
     let result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
