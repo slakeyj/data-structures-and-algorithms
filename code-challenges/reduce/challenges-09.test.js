@@ -8,7 +8,7 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => arr.reduce(accumulator => accumulator += 1);
+const countNumberOfElements = (arr) => arr.reduce(accumulator => accumulator + 1);
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,13 +190,19 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  const primeNumberCount = arr.reduce((accumulator, value) => {
+    if (isPrime(value)) {
+      accumulator += 1;
+    }
+    return accumulator
+  }, 0)
+  return primeNumberCount;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
 
-Write a function named extractState that, given the snorlaxData, below, uses reduce to return the object whose 'name' property matches the given string.
+Write a function named extractStat that, given the snorlaxData, below, uses reduce to return the object whose 'name' property matches the given string.
 
 If the input array does not have a stat with that specific name, the function should return null.
 ------------------------------------------------------------------------------------------------ */
@@ -233,7 +239,11 @@ const snorlaxData = {
 };
 
 const extractStat = (statName, arr) => {
-  // Solution code here...
+  return arr.reduce((accumulator, value) => {
+    value.stat.name === statName ? accumulator + value : null;
+    return accumulator;
+  })
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -246,8 +256,16 @@ Write a function named extractChildren that, given the array of characters from 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
-const extractChildren = (arr) => {
-  // Solution code here...
+const extractChildren = (characters) => {
+  const charactersWithA = characters.filter(character => character.name.includes('a'));
+  return charactersWithA.reduce((accumulator, value) => {
+    const stuff = [];
+    accumulator.forEach(child => stuff.push(child));
+    if (value.children) {
+      value.children.forEach(child => stuff.push(child));
+    }
+    return stuff;
+  }, [])
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -291,19 +309,19 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual(['Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras']);
     expect(extractChildren(characters).length).toStrictEqual(10);
