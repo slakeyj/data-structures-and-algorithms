@@ -226,6 +226,7 @@ const extractVowels = (str) => {
   const regEx = /[aeiou]/g;
   const vowelsExtracted = [];
   vowelsExtracted.push(str.replace(regEx, ''));
+  vowelsExtracted.push(str.match(regEx).sort().join(''))
   console.log('extracted is', vowelsExtracted);
   return vowelsExtracted;
   //
