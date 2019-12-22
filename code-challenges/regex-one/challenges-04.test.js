@@ -112,10 +112,9 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  const regEx = /ells/gm
-  console.log('split string', str.split(' '))
-  const result = str.split(' ').filter(word => word.replace(/\./g, '').match(regEx));
-  console.log('result', result)
+  const regEx = /ells/g;
+  return str.split(' ').filter(word => word.match(regEx))
+  .map(word => word.replace(/\./g, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
