@@ -74,7 +74,9 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 const findTagNames = elements => {
   const regex = /(\/)[a-z0-9]*/g;
   const closingElements = elements.map(string => string.match(regex));
-  return closingElements;
+  return closingElements.reduce((acc, val) => {
+    return acc.concat(val);
+}, []);
 };
 
 
@@ -155,7 +157,7 @@ describe('Testing challenge 3', () => {
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return the closing tags', () => {
     expect(findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'])).toStrictEqual(['/h1', '/p']);
   });
