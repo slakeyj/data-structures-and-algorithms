@@ -167,23 +167,21 @@ For example: [ { house: 'Stark', members: 6 }, { house: 'Arryn', members: 2 }, .
 
 const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
-const houseSurvivors = (arr) => {
-  const survivors = arr.forEach(house => {
-    deceasedSpouses.forEach(spouse => {
-      if (spouse === house.spouse) {
-        ({
-          house: house.house,
-          members: house.spouse != null ? 1 + house.children.length : house.children.length
-        })
-      } else {
-        ({
-          house: house.house,
-          members: house.spouse != null ? 2 + house.children.length : 1 + house.children.length
-        })
+const houseSurvivors = (houseCharacters) => {
+  return houseCharacters.map(character => {
+    const spouseIsDeceased = deceasedSpouses.includes(character.spouse);
+
+    if (character.spouse === null) {
+      return {
+        house: character.house,
+        members: character.children.length + 1 
       }
-    })
+    } 
+    return {
+      house: character.house,
+      members: spouseIsDeceased ? character.children.length + 1 : 2 + character.children.length
+    };
   })
-  return survivors;
 };
 
 /* ------------------------------------------------------------------------------------------------
