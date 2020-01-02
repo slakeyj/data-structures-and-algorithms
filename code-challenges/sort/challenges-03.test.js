@@ -229,31 +229,27 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-   const sortDays = sortMeetingsByDay(arr);
+const sortedByDay = sortMeetingsByDay(arr);
 
-  const sorted = sortDays.sort((meeting1, meeting2) => {
-    // if meeting1 started first
-    //   return -1
-    // if meeting2 started first
-    //   return 1
-
-    if (meeting1.start < meeting2.start) {
-      return -1;
+   return sortedByDay.sort((meeting1, meeting2) => {
+    if (meeting1.dayOfWeek === meeting2.dayOfWeek && meeting1.start === meeting2.start) {
+      if (meeting1.end - meeting1.start < meeting2.end - meeting2.start) {
+        return -1
+      } else if (meeting1.end - meeting1.start > meeting2.end - meeting2.start) {
+        return 1
+      } else {
+        return 0;
+      }
+    } else if (meeting1.dayOfWeek === meeting2.dayOfWeek && meeting1.start !== meeting2.start) {
+      if (meeting1.end - meeting1.start < meeting2.end - meeting2.start) {
+        return -1
+      } else if (meeting1.end - meeting1.start > meeting2.end - meeting2.start) {
+        return 1
+      } else {
+        return 0;
+      }
     }
-
-    if (meeting1.start > meeting2.start) {
-      return 1;
-    }
-    // 
-    //   if meeting1 is shorter than meeting2
-    //     return -1
-    //   if meeting2 is shorter than meeting1
-    //     return 1
-    //   
-    //   return 0
-    //
-  });
-  console.log('sorted days',sortDays);
+   });
 };
 
 /* ------------------------------------------------------------------------------------------------
