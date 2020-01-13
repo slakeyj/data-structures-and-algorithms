@@ -9,4 +9,5 @@ Write a function called reverseArray which takes an array as an argument. Withou
 * Each time the while loop is run through, it will increment the start index, and deincrement the end index.
 
 ## Solution
-<![Whiteboard](../../assets/array-reverse.jpg)
+![Whiteboard](../../assets/array-reverse.jpg)
+![Whiteboard](../../assets/array-reverse2.jpg)
