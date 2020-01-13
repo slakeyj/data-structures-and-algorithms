@@ -12,6 +12,7 @@ Write a function called insertShiftArray which takes in an array and the value t
   * The for loop was started from the midpoint and proceded to increment to the end of the array
   * I created a variable to hold the current number to be inserted into the array and a variable for the next number to be inserted into the array.
   * Once the for loop was completed, the last value had to push into the array because the length of the array was increasing by one and therefore the for loop wouldn't run for as long as needed to complete the problem.
+  
 
 ## Solution
 ![Whiteboard](../../assets/array-shift.jpg)
