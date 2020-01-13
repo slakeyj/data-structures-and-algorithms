@@ -294,7 +294,7 @@ describe('Testing challenge 5', () => {
     // expect(detectTicTacToeWin([['O', '', 'X'], ['X', 'O', 'X'], ['X', '', 'O']])).toStrictEqual(true);
   });
 
-  xtest('It should return false if there are not three in a row', () => {
+  test('It should return false if there are not three in a row', () => {
     expect(detectTicTacToeWin([['X', '', 'O'], ['O', 'O', ''], ['X', 'O', 'X']])).toStrictEqual(false);
   });
 
