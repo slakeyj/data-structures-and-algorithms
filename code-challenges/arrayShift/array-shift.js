@@ -1,17 +1,14 @@
-'use strict';
 
-const insertShiftArray = (arr, num) => {
-  let numberToInsert = num;
-  let numberToStore;
-  const arrayMidPoint = findMidPoint(arr);
-  for (let i = arrayMidPoint; i < arr.length; i++) {
-    numberToStore = arr[i]
-    arr[i] = numberToInsert;
-    console.log('arr i', arr[i])
-    numberToInsert = numberToStore;
+const insertShiftArray = (array, numberToInsert) => {
+  let tempNumber = numberToInsert;
+  const midpointOfArray = findMidPoint(array);
+  for (let i = Math.floor(midpointOfArray); i < array.length; i++) {
+    tempNumber = array[i];
+    array[i] = numberToInsert;
+    numberToInsert = tempNumber;
   }
-  arr.push(numberToInsert);
-  return arr;
+  array.push(tempNumber);
+  return array;
 }
 
 const findMidPoint = arr => {
