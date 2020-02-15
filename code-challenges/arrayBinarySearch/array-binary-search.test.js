@@ -2,7 +2,7 @@ const BinarySearch = require('./array-binary-search.js');
 
 describe('BinarySearch', () => {
   it('should return the index where the value sits if there is a match', () => {
-    expect(BinarySearch([1, 2, 3, 4, 5], 4)).toEqual(3);
+    expect(BinarySearch([1, 2, 3, 4, 5], 3)).toEqual(2);
   })
   it('should return -1 if no match is found', () => {
     expect(BinarySearch([1, 2, 3, 4, 5], 8)).toEqual(-1);
