@@ -1,13 +1,22 @@
-const BinarySearch = (array, numberToFind) => {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === numberToFind) {
-      return i;
+const BinarySearch = (arr, searchKey) => {
+
+  let start;
+  let end = arr.length - 1
+  let midPoint = end - start / 2;
+  console.log('arr mid', arr[midPoint])
+  if (arr[midPoint] === searchKey) {
+    return midPoint;
+  }
+  while (searchKey !== arr[midPoint]) {
+    if (searchKey < arr[midpoint]) {
+      end = midPoint;
+    }
+    if (searchKey > arr[midPoint]) {
+      start = midPoint;
     }
   }
   return -1;
 }
 
-
-console.log(BinarySearch([1, 2, 3, 4, 5,], 8));
 
 module.exports = BinarySearch;
