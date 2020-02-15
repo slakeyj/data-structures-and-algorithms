@@ -16,10 +16,8 @@ class LinkedList {
     this.head = node;
   }
 
-  includes(value) { // 40
-    //this.head = new Node(value);
+  includes(value) {
     let current = this.head;
-    //current.next = undefined here
     if (current === undefined) {
       return false;
     }
