@@ -17,6 +17,6 @@ const BinarySearch = (arr, searchKey) => {
   }
   return -1;
 }
-console.log(BinarySearch([2, 4, 6, 8, 10], 6));
+
 
 module.exports = BinarySearch;

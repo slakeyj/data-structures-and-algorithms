@@ -1,6 +1,6 @@
 const BinarySearch = require('./array-binary-search.js');
 
-describe('BinarySearch', () => {
+xdescribe('BinarySearch', () => {
   it('should return the index where the value sits if there is a match', () => {
     expect(BinarySearch([1, 2, 3, 4, 5], 3)).toEqual(2);
   })
