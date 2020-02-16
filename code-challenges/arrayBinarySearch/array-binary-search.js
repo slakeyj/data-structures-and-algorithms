@@ -23,6 +23,7 @@ const binarySearch = (arr, searchKey) => {
   return -1
 }
 
+
 const calculateMidpoint = (start, end) => {
   return Math.floor((end - start) / 2);
 }
