@@ -1,18 +1,20 @@
-const BinarySearch = require('./array-binary-search.js');
+const binarySearch = require('./array-binary-search.js');
 
-describe('BinarySearch', () => {
+console.log('test file executing');
+
+describe('binarySearch', () => {
   it('should return the index where the value sits if there is a match', () => {
-    expect(BinarySearch([1, 2, 3, 4, 5], 4)).toEqual(3);
+    expect(binarySearch([1, 2, 3, 4, 5], 4)).toEqual(3);
   })
   it('should return -1 if no match is found', () => {
-    expect(BinarySearch([1, 2, 3, 4, 5], 8)).toEqual(-1);
+    expect(binarySearch([1, 2, 3, 4, 5], 8)).toEqual(-1);
   })
 
   it('should return -1 when given an empty array', () => {
-    expect(BinarySearch([], 8)).toEqual(-1);
+    expect(binarySearch([], 8)).toEqual(-1);
   })
 
-  it('should work with negative numbers to search', () => {
-    expect(BinarySearch([-3, -2, 0, 1, 2], -2)).toEqual(1);
+  it('should work with negative numbers', () => {
+    expect(binarySearch([-3, -2, 0, 1, 2], -2)).toEqual(1);
   })
 })
