@@ -26,10 +26,7 @@ class LinkedList {
 
   // inserts newVal before given value in linked list
   insertBefore(value, newVal) {
-    \
-
-
-
+    const newNode = new Node(newVal, null);
     let current = this.head;
     console.log('current', current);
     if (this.head.value === value) {
