@@ -95,6 +95,22 @@ class LinkedList {
     collection += 'NULL'
     return collection;
   }
+
+  findKthValue(k) {
+    let count = 0;
+    let current = this.head;
+    while (current != null) {
+      if (count === k) {
+        return current.value;
+      } else {
+        current = current.next;
+        count++;
+      }
+    }
+    if (k > count) {
+      throw 'That value is too high, please try again.'
+    }
+  }
 }
 
 module.exports = { LinkedList, Node };
