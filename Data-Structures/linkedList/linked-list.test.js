@@ -49,4 +49,56 @@ describe('linked list', () => {
     linkedList.insert(15);
     expect(linkedList.toString()).toEqual("{ 15 } -> { 10 } -> { 5 } -> NULL");
   })
+
+  it('can append a number to the end of the linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    expect(linkedList.head.value).toEqual(5);
+    expect(linkedList.head.next.value).toEqual(10);
+  })
+
+  it('can add multiple nodes to the end of a linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    linkedList.append(15);
+    expect(linkedList.head.value).toEqual(5);
+    expect(linkedList.head.next.next.value).toEqual(15);
+  })
+
+  it('can insert a node before a node located in the middle of a linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    linkedList.append(15);
+    linkedList.insertBefore(15, 12);
+    expect(linkedList.head.next.next.value).toEqual(12);
+  })
+
+  it('can insert a node before the first node of a linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    linkedList.insertBefore(5, 2);
+    expect(linkedList.head.value).toEqual(2);
+  })
+
+  it('can insert a node in the middle of the linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    linkedList.insertAfter(5, 2);
+    expect(linkedList.head.next.value).toEqual(2);
+  })
+
+  it('can insert a node after the last node of the linked list', () => {
+    const linkedList = new LinkedList();
+    linkedList.append(5);
+    linkedList.append(10);
+    linkedList.insertAfter(10, 2);
+    console.log('linked list ', linkedList)
+    expect(linkedList.head.next.next.value).toEqual(2);
+  })
+
 });
