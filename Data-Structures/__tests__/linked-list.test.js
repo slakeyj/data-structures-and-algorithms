@@ -101,4 +101,47 @@ describe('linked list', () => {
     expect(linkedList.head.next.next.value).toEqual(2);
   })
 
+  describe('findKthValue', () => {
+
+    it('can return a value from the middle of the linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.append(3);
+      linkedList.append(2);
+      linkedList.append(1);
+      expect(linkedList.findKthValue(0)).toEqual(3);
+      expect(linkedList.findKthValue(1)).toEqual(2);
+      expect(linkedList.findKthValue(2)).toEqual(1);
+    })
+    it('throws an exception when k is greater than the length of the linked list', () => {
+      const linkedList = new LinkedList();
+      linkedList.append(3);
+      linkedList.append(2);
+      linkedList.append(1);
+      expect(() => { linkedList.findKthValue(5) }).toThrowError('That value is too high, please try again.');
+    })
+
+    it('returns the correct value when k and the length of the list are the same', () => {
+      const linkedList = new LinkedList();
+      linkedList.append(3);
+      linkedList.append(2);
+      linkedList.append(1);
+      expect(linkedList.findKthValue(2)).toEqual(1);
+    })
+
+    it('throws an exception when k is a negative integer', () => {
+      const linkedList = new LinkedList();
+      linkedList.append(3);
+      linkedList.append(2);
+      linkedList.append(1);
+      expect(() => { linkedList.findKthValue(-2) }).toThrow();
+    })
+
+    it('works with a linked list with a size of 1', () => {
+      const linkedList = new LinkedList();
+      linkedList.append(3);
+      expect(linkedList.findKthValue(0)).toEqual(3);
+    })
+
+  })
+
 });
