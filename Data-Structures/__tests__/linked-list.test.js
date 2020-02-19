@@ -117,7 +117,7 @@ describe('linked list', () => {
       linkedList.append(3);
       linkedList.append(2);
       linkedList.append(1);
-      expect(linkedList.findKthValue(5)).toThrowError('That value is too high, please try again.');
+      expect(() => { linkedList.findKthValue(5) }).toThrowError('That value is too high, please try again.');
     })
 
     it('returns the correct value when k and the length of the list are the same', () => {
@@ -133,7 +133,7 @@ describe('linked list', () => {
       linkedList.append(3);
       linkedList.append(2);
       linkedList.append(1);
-      expect(linkedList.findKthValue(-2)).toThrow();
+      expect(() => { linkedList.findKthValue(-2) }).toThrow();
     })
 
     it('works with a linked list with a size of 1', () => {

@@ -107,7 +107,7 @@ class LinkedList {
         count++;
       }
     }
-    if (k > count) {
+    if (k > count || k < 0) {
       throw 'That value is too high, please try again.'
     }
   }
