@@ -97,20 +97,25 @@ class LinkedList {
   }
 
   findKthValue(k) {
-    let count = 0;
+    let valueArray = []
     let current = this.head;
+
     while (current != null) {
-      if (count === k) {
-        return current.value;
-      } else {
-        current = current.next;
-        count++;
-      }
+      valueArray.unshift(current.value)
+      console.log(valueArray);
+      current = current.next;
     }
-    if (k > count || k < 0) {
-      throw 'That value is too high, please try again.'
+    if (k > valueArray.length || k < 0) {
+      throw 'Please enter a valid number';
     }
+    const filteredValue = valueArray.filter((value, index) => {
+      return k === index;
+    })
+    return filteredValue[0];
+
   }
+
+
 }
 
 module.exports = { LinkedList, Node };
