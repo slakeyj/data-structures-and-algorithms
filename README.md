@@ -8,6 +8,7 @@
 * [Array Shift](code-challenges/arrayShift/array-shift.js)
 * [Binary Search](code-challenges/arrayBinarySearch/array-binary-search.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
+* [Linked List Merge](code-challenges/llMerge/ll-merge.js)
 
 
 ## Resources:
