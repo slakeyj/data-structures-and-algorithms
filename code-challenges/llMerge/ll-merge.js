@@ -1,8 +1,5 @@
 const { LinkedList, Node } = require('../../Data-Structures/linkedList/linked-list')
 
-// we know we will need to walk currentOne and currentTwo forward in the loop
-// we know the loop condition needs to be an || because the lists may be different sizes
-
 
 // function mergeLists(listOne, listTwo) {
 //   let currentOne = listOne.head;
