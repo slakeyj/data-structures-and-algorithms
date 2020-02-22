@@ -13,6 +13,7 @@
 * I  then set latest.next to a new node with the linked list Twos head value
 * I then reassign each of those linked list one and linked list two values to their next value
 * I then set latest to equal latest.next 
+* O(n)
 
 ## Solution
 ![Whiteboard](../../assets/ll-merge.jpg)
