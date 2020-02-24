@@ -47,7 +47,6 @@ function mergeLists(listOne, listTwo) {
     }
   }
 
-
   return new LinkedList(zipperedHead);
 
 
