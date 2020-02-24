@@ -8,8 +8,11 @@
 * [Array Shift](code-challenges/arrayShift/array-shift.js)
 * [Binary Search](code-challenges/arrayBinarySearch/array-binary-search.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
+* [Linked List Merge](code-challenges/llMerge/ll-merge.js)
+* [Stacks & Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
 
 
 ## Resources:
 * [How to do a binary search](https://www.geeksforgeeks.org/binary-search/)
+* [Spread Operator used for enqueue method](https://www.geeksforgeeks.org/javascript-spread-operator/)
 
