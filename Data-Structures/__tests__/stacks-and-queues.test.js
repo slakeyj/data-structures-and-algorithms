@@ -38,12 +38,22 @@ describe('Stack', () => {
       const testStack = new Stack();
       testStack.storage = [{ "next": null, "value": 4 }, { "next": null, "value": 5 }];
       it('returns the new length of the array', () => {
-        expect(testStack.push({ "next": null, "value": 3 })).toEqual(testStack.storage.length);
+        expect(testStack.push(3)).toEqual(testStack.storage.length);
       })
 
       it('adds the new value to the top of the stack', () => {
+        // console.log('test stack storage', testStack.storage)
         expect(testStack.storage[0].value).toEqual(3);
       })
+    })
+
+    describe('it can push multiple values', () => {
+      const testStack = new Stack();
+      testStack.push(3)
+      testStack.push(2)
+      testStack.push(1)
+      expect(testStack.storage.length).toEqual(3);
+
     })
   })
 
