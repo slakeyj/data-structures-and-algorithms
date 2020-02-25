@@ -5,15 +5,20 @@ const Stack = require('../../Data-Structures/stacksAndQueues/stacks-and-queues.j
 
 class PseudoQueue {
   constructor() {
+    this.stackOne = new Stack();
+    this.stackTwo = new Stack()
+    // this.storage = []
 
   }
 
-
   enqueue(value) {
-    // inserts first in first out
+    return this.stackOne.push(value);
   }
 
   dequeue() {
-    // extracts value using first-in, first-out
+    this.stackTwo.pop(this.stackOne);
+
   }
 }
+
+module.exports = PseudoQueue;

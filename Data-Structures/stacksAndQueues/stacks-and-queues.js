@@ -1,12 +1,5 @@
-class Node {
-  constructor(value, next) {
-    this.value = value;
-    this.next = next;
-  }
-}
 
 
-// what am I doing with top
 class Stack {
   constructor() {
     this.storage = [];
@@ -21,10 +14,7 @@ class Stack {
   }
 
   push(value) {
-    const node = new Node(value, null);
-    node.next = this.front;
-    this.front = node;
-    return this.storage.unshift(this.front);
+    return this.storage.unshift(value);
   }
 
   pop() {
@@ -36,7 +26,6 @@ class Stack {
   }
 }
 
-// what am I doing with front?
 class Queue {
   constructor() {
     this.storage = [];
@@ -49,7 +38,6 @@ class Queue {
   enqueue(value) {
     return this.storage.push(value);
   }
-
 
   dequeue() {
     if (this.storage.length === 0) {
@@ -70,4 +58,4 @@ class Queue {
 
 
 
-module.exports = { Stack, Queue, Node }
+module.exports = { Stack, Queue }

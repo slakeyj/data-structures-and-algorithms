@@ -56,15 +56,6 @@ describe('Stack', () => {
         expect(testStack.peek()).toEqual(4);
       })
     })
-
-    describe('it can push multiple values', () => {
-      const testStack = new Stack();
-      testStack.push(3)
-      testStack.push(2)
-      testStack.push(1)
-      expect(testStack.storage.length).toEqual(3);
-
-    })
   })
 
 
