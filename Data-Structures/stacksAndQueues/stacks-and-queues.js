@@ -24,7 +24,10 @@ class Stack {
   }
 
   push(value) {
-    return this.storage.unshift(value);
+    const node = new Node(value, null);
+    node.next = this.front;
+    this.front = node;
+    return this.storage.unshift(this.front);
   }
 
   pop() {
@@ -49,6 +52,7 @@ class Queue {
     this.front = newNode
     return this.storage.push(newNode);
   }
+
 
   dequeue() {
 
