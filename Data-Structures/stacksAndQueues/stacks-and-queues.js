@@ -9,70 +9,57 @@ class Node {
 // what am I doing with top
 class Stack {
   constructor() {
-    this.top = null;
     this.storage = [];
   }
 
+  length() {
+    return this.storage.length;
+  }
+
   peek() {
-
-    if (this.storage.length === 0) {
-      return undefined;
-    } else {
-      return this.storage[0].value;
-    }
-
+    return this.storage[0];
   }
 
   push(value) {
-    const node = new Node(value, null);
-    node.next = this.front;
-    this.front = node;
-    return this.storage.unshift(this.front);
+    return this.storage.unshift(value);
   }
 
   pop() {
-    const removedNode = this.storage.shift();
-    return removedNode.value;
+    return this.storage.shift();
   }
 
   isEmpty() {
-    return this.storage.length > 0 ? true : false;
+    return this.storage.length === 0;
   }
 }
 
 // what am I doing with front?
 class Queue {
   constructor() {
-    this.front = null;
     this.storage = [];
   }
 
-  enqueue(value) {
-    const newNode = new Node(value, null);
-    this.front = newNode
-    return this.storage.push(newNode);
+  length() {
+    return this.storage.length;
   }
 
+  enqueue(value) {
+    return this.storage.push(value);
+  }
 
   dequeue() {
-
     if (this.storage.length === 0) {
       return undefined;
     }
-    const removedNode = this.storage.shift();
-    return removedNode.value;
+    return this.storage.shift();
   }
 
   peek() {
-    if (this.storage.length === 0) {
-      return undefined;
-    }
-    const front = this.storage[0];
-    return front.value
+    return this.storage[0];
   }
 
   isEmpty() {
-    return this.storage.length > 0 ? true : false;
+    return this.storage.length === 0;
   }
 
 }
