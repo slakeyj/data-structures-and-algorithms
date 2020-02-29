@@ -12,9 +12,9 @@ describe('PseudoQueue', () => {
 })
 
 
-//   // xit('can enqueue values using Stacks push()', () => {
-//   //   expect(pseudoQueue).toEqual([1, 2, 3])
-//   // })
+it('can enqueue values using Stacks push()', () => {
+  // expect(pseudoQueue).toEqual([1, 2, 3])
+})
 
 
 // })
