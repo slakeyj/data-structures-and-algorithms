@@ -8,7 +8,9 @@
 
 ## Approach & Efficiency
 * I created an insert method so I could create binary trees to test my traversal methods
-* 
+* Implemented each traversal method the same way, the only difference being at which point I push the value into the array.
+* Time: O(n)
+* Space: O(n)
 
 ## API
 * preOrder traversal: starts at the root, goes left, then goes right
