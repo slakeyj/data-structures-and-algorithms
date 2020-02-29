@@ -7,9 +7,10 @@
 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+* I created an insert method so I could create binary trees to test my traversal methods
+* 
 
 ## API
-* preOrder traversl: starts at the root, goes left, then goes right
+* preOrder traversal: starts at the root, goes left, then goes right
 * inOrder traversal: goes left, up to the root, then right
 * postOrdre: goes left, then right, then up to the root
