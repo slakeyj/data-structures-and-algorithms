@@ -7,9 +7,11 @@
 * [Array Reverse](code-challenges/arrayReverse/array-reverse.js)
 * [Array Shift](code-challenges/arrayShift/array-shift.js)
 * [Binary Search](code-challenges/arrayBinarySearch/array-binary-search.js)
+* [FIFO Animal Shelter](code-challenges/arrayBinarySearch/fifo-animal-shelter.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
 * [Linked List Merge](code-challenges/llMerge/ll-merge.js)
 * [Stacks & Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
+* [Tree](Data-Structures/tree/tree.js)
 
 
 ## Resources:

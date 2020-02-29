@@ -1,12 +1,5 @@
-class Node {
-  constructor(value, next) {
-    this.value = value;
-    this.next = next;
-  }
-}
 
 
-// what am I doing with top
 class Stack {
   constructor() {
     this.storage = [];
@@ -33,7 +26,6 @@ class Stack {
   }
 }
 
-// what am I doing with front?
 class Queue {
   constructor() {
     this.storage = [];
@@ -66,4 +58,4 @@ class Queue {
 
 
 
-module.exports = { Stack, Queue, Node }
+module.exports = { Stack, Queue }
