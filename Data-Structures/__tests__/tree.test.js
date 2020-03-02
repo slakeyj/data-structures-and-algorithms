@@ -104,7 +104,6 @@ describe('tree', () => {
     it('traverses to the right side last', () => {
       const inOrderTree = binaryTree.inOrder(binaryTree.root)
       expect(inOrderTree[2]).toEqual(15);
-
     })
 
   })
@@ -134,6 +133,18 @@ describe('tree', () => {
 
     })
   })
+
+
+  // describe('isBinarySearchTree()', () => {
+
+  //   let binaryTree;
+  //   beforeEach(() => {
+  //     binaryTree = new BinaryTree();
+  //   })
+  //   it('returns true for an empty tree', () => {
+  //     expect(binaryTree.isBinarySearchTree()).toBeTruthy();
+  //   })
+  // })
 
 
 })
