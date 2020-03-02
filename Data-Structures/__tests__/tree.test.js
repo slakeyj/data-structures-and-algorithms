@@ -9,20 +9,20 @@ describe('tree', () => {
   })
 
 
-  it('can instantiate a tree with a single root node', () => {
-    const node = new Node(12, 2, 4)
-    const binaryTree = new BinaryTree(node);
-    expect(binaryTree.root.value).toEqual(12);
-    expect(binaryTree.root.left).toEqual(2);
-    expect(binaryTree.root.right).toEqual(4);
-  })
+  // it('can instantiate a tree with a single root node', () => {
+  //   const node = new Node(12, 2, 4)
+  //   const binaryTree = new BinaryTree(node);
+  //   expect(binaryTree.root.value).toEqual(12);
+  //   expect(binaryTree.root.left).toEqual(2);
+  //   expect(binaryTree.root.right).toEqual(4);
+  // })
 
-  it('can add a left child and right child with a single root node', () => {
-    const node = new Node(12, 2, 4)
-    const binaryTree = new BinaryTree(node);
-    expect(binaryTree.root.left).toEqual(2);
-    expect(binaryTree.root.right).toEqual(4);
-  })
+  // it('can add a left child and right child with a single root node', () => {
+  //   const node = new Node(12, 2, 4)
+  //   const binaryTree = new BinaryTree(node);
+  //   expect(binaryTree.root.left).toEqual(2);
+  //   expect(binaryTree.root.right).toEqual(4);
+  // })
 
   describe('insert', () => {
     it('inserts a new node', () => {
@@ -104,7 +104,6 @@ describe('tree', () => {
     it('traverses to the right side last', () => {
       const inOrderTree = binaryTree.inOrder(binaryTree.root)
       expect(inOrderTree[2]).toEqual(15);
-
     })
 
   })
@@ -134,6 +133,18 @@ describe('tree', () => {
 
     })
   })
+
+
+  // describe('isBinarySearchTree()', () => {
+
+  //   let binaryTree;
+  //   beforeEach(() => {
+  //     binaryTree = new BinaryTree();
+  //   })
+  //   it('returns true for an empty tree', () => {
+  //     expect(binaryTree.isBinarySearchTree()).toBeTruthy();
+  //   })
+  // })
 
 
 })

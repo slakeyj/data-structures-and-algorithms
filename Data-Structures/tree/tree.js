@@ -8,8 +8,8 @@ class Node {
 }
 
 class BinaryTree {
-  constructor(root) {
-    this.root = root;
+  constructor() {
+    this.root = null;
     this.collection = [];
   }
 
@@ -53,18 +53,17 @@ class BinaryTree {
     return this.collection;
   }
 
-
   inOrder(root) {
     if (root === null) {
       return
     }
     if (root.left) {
-      this.preOrder(root.left);
+      this.inOrder(root.left);
     }
     this.collection.push(root.value);
 
     if (root.right) {
-      this.preOrder(root.right);
+      this.inOrder(root.right);
     }
     return this.collection;
 
@@ -76,15 +75,27 @@ class BinaryTree {
       return
     }
     if (root.left) {
-      this.preOrder(root.left);
+      this.postOrder(root.left);
     }
 
     if (root.right) {
-      this.preOrder(root.right);
+      this.postOrder(root.right);
     }
     this.collection.push(root.value);
     return this.collection;
 
+  }
+
+  isBinarySearchTree(node, leftBoundary, rightBoundary) {
+    if (node === null) {
+      return true;
+    }
+    if (leftBoundary && node.value < leftBoundary
+      || rightBoundary && node.value > rightBoundary) {
+      return false;
+    }
+    return this.isBinarySearchTree(node.left, leftBoundary, node.value)
+      && this.isBinarySearchTree(node.right, node.value, rightBoundary);
   }
 }
 
