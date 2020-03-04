@@ -7,6 +7,7 @@
 * [Array Reverse](code-challenges/arrayReverse/array-reverse.js)
 * [Array Shift](code-challenges/arrayShift/array-shift.js)
 * [Binary Search](code-challenges/arrayBinarySearch/array-binary-search.js)
+* [Breadth-First Traversal](code-challenges/breadthFirstTree/breadth-first.js)
 * [FIFO Animal Shelter](code-challenges/arrayBinarySearch/fifo-animal-shelter.js)
 * [FizzBuzz Tree](code-challenges/fizzBuzzTree/fizz-buzz-tree.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
