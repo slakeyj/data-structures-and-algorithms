@@ -54,7 +54,7 @@ describe('fizzBuzzTree()', () => {
   })
 
   it('returns undefined when given an empty binary tree', () => {
-    expect(fizzBuzzTree(binaryTree)).toBeUndefined();
+    expect(fizzBuzzTree(binaryTree)).toEqual(null);
   })
 
 })
