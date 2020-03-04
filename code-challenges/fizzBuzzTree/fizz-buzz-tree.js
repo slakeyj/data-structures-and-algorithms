@@ -6,7 +6,7 @@ const fizzBuzzTree = tree => {
 
   const inOrder = root => {
     if (root === null) {
-      return;
+      return null;
     }
 
     if (root.value % 3 === 0 && root.value % 5 === 0) {
