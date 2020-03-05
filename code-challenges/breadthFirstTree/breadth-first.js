@@ -1,4 +1,4 @@
-const { Stack, Queue } = require('../../Data-Structures/stacksAndQueues/stacks-and-queues')  //stack?
+const { Stack, Queue } = require('../../Data-Structures/stacksAndQueues/stacks-and-queues')
 
 
 const breadthFirst = tree => {
@@ -24,13 +24,25 @@ const breadthFirst = tree => {
       breadth.enqueue(currentNode.right);
     }
   }
-
-
-
   return collection;
-
 }
 
+
+function RLOT(tree) {
+  if (tree === null) return null
+  if (tree.root === null) return null
+  let queue = []
+  let output = []
+  let current = tree.root
+  queue.unshift(current)
+  while (queue.length !== 0) {
+    current = queue.pop()
+    output.unshift(current.value)
+    if (current.right !== null) queue.unshift(current.right)
+    if (current.left !== null) queue.unshift(current.left)
+  }
+  return output
+}
 
 
 module.exports = breadthFirst;
