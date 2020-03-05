@@ -20,7 +20,7 @@ describe('findMaximumValue', () => {
     expect(findMaximumValue(binaryTree.root)).toEqual(2);
   })
 
-  fit('returns the maximum value when there are multiple nodes in the tree', () => {
+  it('returns the maximum value when there are multiple nodes in the tree', () => {
     binaryTree.insert(2);
     binaryTree.insert(5);
     binaryTree.insert(3);

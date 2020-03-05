@@ -1,21 +1,26 @@
+const { Stack, Queue } = require('../../Data-Structures/stacksAndQueues/stacks-and-queues')
 
 const findMaximumValue = root => {
   let maxValue;
   if (root === null) {
     return null;
   }
-  // need to set to root just once, resets to root every time
   maxValue = root.value;
-  if (root.left) {
-    maxValue = findMaxHelper(maxValue, root.left.value);
-    findMaximumValue(root.left);
-  }
 
-  if (root.right) {
-    maxValue = findMaxHelper(maxValue, root.right.value);
-    findMaximumValue(root.right);
+  const breadth = new Queue();
+  breadth.enqueue(root);
+  while (breadth.peek()) {
+    currentNode = breadth.dequeue();
+    maxValue = findMaxHelper(maxValue, currentNode.value);
+
+    if (currentNode.left) {
+      breadth.enqueue(currentNode.left);
+    }
+
+    if (currentNode.right) {
+      breadth.enqueue(currentNode.right);
+    }
   }
-  console.log('max val', maxValue)
   return maxValue;
 
 }
