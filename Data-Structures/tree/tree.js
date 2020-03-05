@@ -97,6 +97,8 @@ class BinaryTree {
     return this.isBinarySearchTree(node.left, leftBoundary, node.value)
       && this.isBinarySearchTree(node.right, node.value, rightBoundary);
   }
+
+
 }
 
 module.exports = { Node, BinaryTree }
