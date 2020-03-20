@@ -43,12 +43,12 @@ const merge = (left, right, arr) => {
     }
   } else {
     // or we continue to iterate over the rest of the left
-    while (i < left.length) {
-      arr[k] = left[i]
-      i++;
-      k++;
-    }
+
+    arr[k] = left[i]
+    i++;
+    k++;
   }
 }
+
 
 module.exports = mergeSort;
