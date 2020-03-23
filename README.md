@@ -13,6 +13,7 @@
 * [Insertion Sort](Data-Structures/insertionSort/insertion-sort.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
 * [Linked List Merge](code-challenges/llMerge/ll-merge.js)
+* [Repeated Word](code-challenges/repeatedWord/repeated-word.js)
 * [Stacks & Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
 * [Tree](Data-Structures/tree/tree.js)
 
