@@ -17,6 +17,7 @@ describe('treeIntersection()', () => {
   it('returns the value if both trees have one value that is the same', () => {
     binaryTreeOne.insert(2);
     binaryTreeTwo.insert(2);
+
     expect(treeIntersection(binaryTreeOne, binaryTreeTwo)).toEqual([2])
   })
 })

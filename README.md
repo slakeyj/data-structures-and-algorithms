@@ -16,6 +16,7 @@
 * [Repeated Word](code-challenges/repeatedWord/repeated-word.js)
 * [Stacks & Queues](Data-Structures/stacksAndQueues/stacks-and-queues.js)
 * [Tree](Data-Structures/tree/tree.js)
+* [Tree Intersection](Data-Structures/treeIntersection/tree-intersection.js)
 
 
 ## Resources:
