@@ -10,7 +10,7 @@ describe('treeIntersection()', () => {
     binaryTreeTwo = new BinaryTree();
   })
 
-  it('returns null if either tree has no values', () => {
+  it('returns undefined if either tree has no values', () => {
     expect(treeIntersection(binaryTreeOne, binaryTreeTwo)).toBeUndefined();
   })
 
@@ -19,5 +19,18 @@ describe('treeIntersection()', () => {
     binaryTreeTwo.insert(2);
 
     expect(treeIntersection(binaryTreeOne, binaryTreeTwo)).toEqual([2])
+  })
+
+
+  it('returns the intersecting values when there are multiples values in each tree', () => {
+    binaryTreeOne.insert(2);
+    binaryTreeOne.insert(3);
+    binaryTreeOne.insert(4);
+    binaryTreeOne.insert(5);
+    binaryTreeTwo.insert(2);
+    binaryTreeTwo.insert(5);
+    binaryTreeOne.insert(6);
+
+    expect(treeIntersection(binaryTreeOne, binaryTreeTwo)).toEqual([2, 5])
   })
 })
