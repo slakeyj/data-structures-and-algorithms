@@ -11,6 +11,7 @@
 * [FIFO Animal Shelter](code-challenges/arrayBinarySearch/fifo-animal-shelter.js)
 * [FizzBuzz Tree](code-challenges/fizzBuzzTree/fizz-buzz-tree.js)
 * [Insertion Sort](Data-Structures/insertionSort/insertion-sort.js)
+* [Left Join](code-challenges/leftJoin/left-join.js)
 * [Linked List](Data-Structures/linkedList/linked-list.js)
 * [Linked List Merge](code-challenges/llMerge/ll-merge.js)
 * [Repeated Word](code-challenges/repeatedWord/repeated-word.js)
