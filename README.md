@@ -9,6 +9,7 @@
 * [Binary Search](code-challenges/arrayBinarySearch/array-binary-search.js)
 * [Breadth-First Traversal](code-challenges/breadthFirstTree/breadth-first.js)
 * [FIFO Animal Shelter](code-challenges/arrayBinarySearch/fifo-animal-shelter.js)
+* [Graph](Data-Structures/graph/graph.js)
 * [FizzBuzz Tree](code-challenges/fizzBuzzTree/fizz-buzz-tree.js)
 * [Insertion Sort](Data-Structures/insertionSort/insertion-sort.js)
 * [Left Join](code-challenges/leftJoin/left-join.js)

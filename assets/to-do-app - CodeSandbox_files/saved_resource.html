@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://048fh.codesandbox.io/#/action-3 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script crossorigin="" type="text/javascript" src="./vendors_app_embed_sandbox-startup.963c66368.chunk.js"></script>
+    <script crossorigin="" type="text/javascript" src="./sandbox-startup.b51cde346.js"></script>
+
+<script src="./browserfs.min(1).js" type="text/javascript"></script>
+
+<script>
+  window.process = BrowserFS.BFSRequire('process');
+  window.Buffer = BrowserFS.BFSRequire('buffer').Buffer;
+</script>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="https://048fh.codesandbox.io/manifest.json">
+    <link rel="shortcut icon" href="https://048fh.codesandbox.io/favicon.ico">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Tasks Completed 2 / 20</title>
+    <link rel="manifest" href="https://048fh.codesandbox.io/manifest.json">
+  <script charset="utf-8" src="./vendors_react-devtools-backend.3d9bbb2fa.chunk.js"></script><link id="external-css" rel="stylesheet" type="text/css" href="./css(1)" media="all"><link id="external-css" rel="stylesheet" type="text/css" href="./css(2)" media="all"><style id="/src/components/NewTask/NewTask.scss:-css" type="text/css">@import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
+</style><script charset="utf-8" src="./vendors_app_embed_jest-lite.c49f23989.chunk.js"></script><script charset="utf-8" src="./vendors_jest-lite.0977f3799.chunk.js"></script><script charset="utf-8" src="./jest-lite.1d6864ef3.chunk.js"></script><style id="/src/App.scss:-css" type="text/css">/* latin-ext */
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Zilla Slab"), local("ZillaSlab-Regular"), url(https://fonts.gstatic.com/s/zillaslab/v5/dFa6ZfeM_74wlPZtksIFajQ6_V6LVlBKdA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Zilla Slab"), local("ZillaSlab-Regular"), url(https://fonts.gstatic.com/s/zillaslab/v5/dFa6ZfeM_74wlPZtksIFajo6_V6LVlA.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+body {
+  background-image: url("../pink-planet.png");
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.App {
+  font-family: 'Zilla Slab';
+  text-align: center; }
+</style><style id="/src/components/Header/Header.scss:-css" type="text/css">/* latin-ext */
+@font-face {
+  font-family: 'Zilla Slab Highlight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Zilla Slab Highlight"), local("ZillaSlabHighlight-Regular"), url(https://fonts.gstatic.com/s/zillaslabhighlight/v7/gNMbW2BrTpK8-inLtBJgMMfbm6uNVDvRxitBaWHSSmlN6d8.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Zilla Slab Highlight';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Zilla Slab Highlight"), local("ZillaSlabHighlight-Regular"), url(https://fonts.gstatic.com/s/zillaslabhighlight/v7/gNMbW2BrTpK8-inLtBJgMMfbm6uNVDvRxitPaWHSSmlN.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+header {
+  color: #5eace0;
+  font-family: 'Zilla Slab Highlight', cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px black;
+  margin-bottom: 50px; }
+</style><style id="/src/components/ToDo/ToDo.scss:-css" type="text/css">@import url("https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css");
+.table {
+  width: 14%;
+  margin: auto; }
+
+.paginate {
+  margin: auto; }
+
+.false-status {
+  background: #406cbe; }
+</style></head>
+
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div class="App container"><header><h1> Plan It </h1></header><form class=""><input class="input" type="text" name="task" placeholder="Enter Task"><select class="input" name="difficulty"><option task="">--Select Difficulty--</option><option task="1">1</option><option task="2">2</option><option task="3">3</option><option task="4">4</option><option task="5">5</option></select><button value="Add Task" type="button" class="btn btn-secondary">Add Task</button></form><table class="table table table-light"><thead><tr class="headings"><th>Task</th><th>Difficulty</th><th>Status</th></tr><tr class="task-item"><td class="task">Buy Groceries</td><td class="difficulty">2</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">Exercise</td><td class="difficulty">3</td><tr><button type="button" class="true-status btn btn-info">Complete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">Walk the Dog</td><td class="difficulty">2</td><tr><button type="button" class="true-status btn btn-info">Complete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">Do Homework</td><td class="difficulty">4</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">Laundry</td><td class="difficulty">2</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">efwfw</td><td class="difficulty">3</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">efwfw</td><td class="difficulty">3</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">efwfw</td><td class="difficulty">3</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">efwfw</td><td class="difficulty"></td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr><tr class="task-item"><td class="task">efwfw</td><td class="difficulty">3</td><tr><button type="button" class="false-status btn btn-info">Incomplete</button><button type="button" class="delete-button btn btn-danger">X</button></tr></tr></thead><div class="paginate"><button type="button" class="paginate-button btn btn-secondary">Previous</button><button type="button" class="paginate-button btn btn-secondary">Next</button></div></table><div>Entries Per Page:<input type="number" min="0" max="20" placeholder="10"></div><footer><p> © 2020 Susanna Lakey</p></footer></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body></html>
