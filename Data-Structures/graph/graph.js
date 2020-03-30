@@ -3,13 +3,11 @@ class Graph {
     this.adjacencyList = new Map();
   }
 
-
   addNode(node) {
     // initialize it with an empty array to add the adjacent nodes to
     this.adjacencyList.set(node, []);
     return node;
   }
-
 
   addEdge(node, destination, weight) {
     if (!this.size()) {
@@ -18,16 +16,21 @@ class Graph {
 
     const arrayOne = this.adjacencyList.get(node);
     const arrayTwo = this.adjacencyList.get(destination);
-    if (!weight) {
-      arrayOne.push(destination);
-      arrayTwo.push(node);
+    if (node !== destination) {
+      if (!weight) {
+        arrayOne.push(destination);
+        arrayTwo.push(node);
+      } else {
+        let obj = {};
+        obj[destination] = weight
+        arrayOne.push(obj);
+        obj = {};
+        obj[node] = weight
+        arrayTwo.push(obj);
+      }
+      // this handles the case of one node and one edge
     } else {
-      let obj = {};
-      obj[destination] = weight
-      arrayOne.push(obj);
-      obj = {};
-      obj[node] = weight
-      arrayTwo.push(obj);
+      arrayOne.push(destination);
     }
   }
 
@@ -46,7 +49,7 @@ class Graph {
   }
 
   size() {
-    return [...this.adjacencyList.keys()].length;
+    return this.adjacencyList.size;
   }
 }
 

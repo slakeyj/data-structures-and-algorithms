@@ -7,8 +7,6 @@ describe('Graph', () => {
     graph = new Graph();
   })
 
-
-
   describe('addNode()', () => {
 
     it('adds the given value into the graph', () => {
@@ -23,6 +21,8 @@ describe('Graph', () => {
 
     it('properly returns a graph with one node and one edge', () => {
       graph.addNode('A');
+      graph.addEdge('A', 'A');
+      expect(graph.adjacencyList.get('A')).toEqual(["A"])
     })
 
     it('successfully adds an edge to the graph', () => {
