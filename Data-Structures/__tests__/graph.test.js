@@ -118,7 +118,7 @@ describe('Graph', () => {
     })
   })
 
-  describe('size', () => {
+  describe('size()', () => {
     it('returns the number of nodes in a graph', () => {
       graph.addNode('A');
       graph.addNode('B')
@@ -126,6 +126,21 @@ describe('Graph', () => {
       graph.addNode('D')
       graph.addNode('E');
       expect(graph.size()).toEqual(5);
+    })
+  })
+
+  describe('breadthFirst()', () => {
+    it('returns an array of the nodes in order', () => {
+      graph.addNode('A');
+      graph.addNode('B')
+      graph.addNode('C');
+      graph.addNode('D')
+      graph.addNode('E');
+      graph.addEdge('A', 'B');
+      graph.addEdge('A', 'C');
+      graph.addEdge('A', 'D')
+      graph.addEdge('B', 'E')
+      expect(graph.breadthFirst('A')).toEqual(['A', 'B', 'C', 'D', 'E'])
     })
   })
 })

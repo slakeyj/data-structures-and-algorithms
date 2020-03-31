@@ -1,3 +1,5 @@
+const { Stack, Queue } = require('../stacksAndQueues/stacks-and-queues')
+
 class Graph {
   constructor() {
     this.adjacencyList = new Map();
@@ -50,6 +52,26 @@ class Graph {
 
   size() {
     return this.adjacencyList.size;
+  }
+
+  breadthFirst(node) {
+    const queue = new Queue();
+    const nodes = [];
+    const visited = new Set();
+    queue.enqueue(node);
+
+    while (queue.length()) {
+      let front = queue.dequeue();
+      nodes.push(front);
+      this.getNeighbors(node).map(child => {
+        if (!visited.has(child)) {
+          visited.add(child);
+          queue.enqueue(child);
+        }
+      })
+    }
+    console.log('nodes', nodes)
+    return nodes;
   }
 }
 
