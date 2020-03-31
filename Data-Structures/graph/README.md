@@ -46,3 +46,5 @@
 * size()
   - Returns the total number of nodes in the graph
 * breadthFirst()
+  - Traverses a graph breadth first, returning an array of all the nodes in order
+  ![Whiteboard](../../assets/breadth-first.jpg)
