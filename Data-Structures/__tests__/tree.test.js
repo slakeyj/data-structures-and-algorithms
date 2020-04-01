@@ -117,9 +117,5 @@ describe('tree', () => {
       expect(postOrderTree[2]).toEqual(12);
 
     })
-
-
   })
-
-
 })
