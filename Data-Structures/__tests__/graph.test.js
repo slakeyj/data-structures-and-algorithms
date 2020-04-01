@@ -129,7 +129,7 @@ describe('Graph', () => {
     })
   })
 
-  describe('breadthFirst()', () => {
+  xdescribe('breadthFirst()', () => {
     it('returns an array of the nodes in order', () => {
       graph.addNode('A');
       graph.addNode('B')
